@@ -44,3 +44,35 @@ postButton.addEventListener('click', function () {
     });
 })
 
+// put request
+let putButton = document.querySelector('#put-btn');
+putButton.addEventListener('click', function () {
+    let empID = '_abcde',
+        let employee = {
+            id: empID,
+            first_name: 'john',
+            last_name: 'wilson',
+            email: 'johnwislon@gmail.com',
+            gender: 'male',
+            ip_address: '255.255.255.255'
+        }
+    let url = `${serverURL}/employees/${empID}`;
+    let http = new brainhttp();
+    http.put(url, employee, (data) => {
+        alert(JSON.stringifly(data));
+        fetchEmployees();
+    })
+})
+
+// delete button
+let deleteButton = docuement.querySelector('#delete-btn');
+deleteButton, addEventListener('click', function () {
+    let employeeID = `_vwxyz`,
+        let url = `${serverURL}/employees`;
+    let http = new brainhttp();
+    http.delete(url, data) => {
+        this.alert(JSON.stringify(data));
+        fetchEmployees();
+    }
+
+})
